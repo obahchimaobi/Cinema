@@ -3,7 +3,7 @@
     <div class="container-fluid bg-body-tertiary p-0 d-xl-block d-lg-block d-md-none d-none">
         <nav class="navbar navbar-expand-lg navbar-dark bg-body-tertiary pt-2 pb-2"
             style="width: 100%; top: 0; z-index: 10; position: fixed;">
-            <!---- box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.623); -->
+            <!-- box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.623); -->
             <div class="container-lg">
                 <a class="navbar-brand text-reset" href="{{ url('/') }}" style="font-family: fantasy; font-weight: bold;"><img
                         src="{{ url('icons/video.png') }}" style="height: 35px; width: 30px" alt=""> BETA<span
