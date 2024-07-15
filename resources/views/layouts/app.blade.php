@@ -26,43 +26,6 @@
         href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css') }}"
         integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        .check-icon {
-            display: none;
-            margin-left: auto;
-        }
-
-        .active .check-icon {
-            display: inline;
-        }
-
-        .btn.active {
-            background-color: #6f42c1;
-            color: #fff;
-        }
-
-        .dropdown-menu {
-            padding: 0;
-        }
-
-        .dropdown-menu button {
-            width: 100%;
-            text-align: left;
-            padding: 10px;
-            border: none;
-            background-color: transparent;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        /* .dropdown-menu button:hover {
-            background-color: #f0f0f0;
-        } */
-    </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 

@@ -10,15 +10,15 @@
         <h4 style="float: left; font-family: 'Ubuntu sans', sans-serif; font-weight: 600;">Action  @if ($page == 1)
             @else
                 <span>
-                    <h6 style="font-family: 'Roboto', sans-serif; font-weight: normal; font-size: 14px;">Page
+                    <h6 style="font-family: 'Roboto', sans-serif; font-weight: normal; font-size: 13px;">Page
                         {{ $page }}</h6>
                 </span>
             @endif
         </h4>
         <h6 class="" style="float: right; font-family: 'Robot', sans-serif; font-weight: normal"><span
-                style="margin-right: 5px; font-size: 14px"><a href="{{ url('/') }} "
+                style="margin-right: 5px; font-size: 13px"><a href="{{ url('/') }} "
                     class="text-decoration-none text-dark text-muted">Home</a></span> <i class="fa fa-arrow-right text-muted"
-                style="font-size: 13px" aria-hidden="true"></i> <span style="margin-left: 5px; font-size: 14px"
+                style="font-size: 13px" aria-hidden="true"></i> <span style="margin-left: 5px; font-size: 13px"
                 class="text-muted">Action</span></h6>
     </div>
 

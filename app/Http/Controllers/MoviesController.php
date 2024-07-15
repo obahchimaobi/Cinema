@@ -27,7 +27,8 @@ class MoviesController extends Controller
                 $join->on('s1.movieId', '=', 's2.movieId');
             })
             ->where('status', '!=', 'pending')
-            ->latest('s1.id')
+            // ->latest('s1.id')
+            ->orderBy('created_at', 'asc')
             ->paginate(36);
 
         return view('home', compact('series_all', 'movies_all', 'seasons'));

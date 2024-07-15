@@ -18,9 +18,9 @@
         </h4>
 
         <h6 class="" style="float: right; font-family: 'Robot', sans-serif; font-weight: normal"><span
-                style="margin-right: 5px; font-size: 14px"><a href="{{ url('/') }} "
+                style="margin-right: 5px; font-size: 13px"><a href="{{ url('/') }} "
                     class="text-decoration-none text-reset text-muted">Home</a></span> <i class="fa fa-arrow-right text-muted"
-                style="font-size: 13px" aria-hidden="true"></i> <span style="margin-left: 5px; font-size: 14px"
+                style="font-size: 13px" aria-hidden="true"></i> <span style="margin-left: 5px; font-size: 13px"
                 class="text-muted">Search</span></h6>
     </div>
 
@@ -46,23 +46,23 @@
                                 data-bs-title="{{ $search->full_name . ' ' . '(' . $search->releaseYear . ')' }}">
 
                                 <h6 class="mt-2 text-truncate"
-                                    style="font-family: 'Roboto', sans-serif; font-weight: 500; font-weight: bold; font-size: 14px;">
+                                    style="font-family: 'Roboto', sans-serif; font-weight: 500; font-weight: bold; font-size: 13px;">
                                     {{ $search->full_name . ' ' . '(' . $search->releaseYear . ')' }}</h6>
                             </a>
 
                             @if ($search->genres == '0')
                                 <h6
-                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; font-weight: 400; margin-top: -4px;">
+                                    style="font-size: 12px; font-family: 'Roboto', sans-serif; font-weight: 400; margin-top: -4px;">
                                     N/A
                                 </h6>
                             @elseif ($search->genres == '')
                                 <h6
-                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; font-weight: 400; margin-top: -4px;">
+                                    style="font-size: 12px; font-family: 'Roboto', sans-serif; font-weight: 400; margin-top: -4px;">
                                     N/A
                                 </h6>
                             @else
                                 <h6 class="text-truncate"
-                                    style="font-size: 13px; font-family: 'Roboto', sans-serif; font-weight: 400; margin-top: -4px;">
+                                    style="font-size: 12px; font-family: 'Roboto', sans-serif; font-weight: 400; margin-top: -4px;">
                                     {{ $search->genres }}
                                 </h6>
                             @endif

@@ -110,3 +110,34 @@ img {
     border-radius: 8px;
     aspect-ratio: 5/8;
 }
+
+.check-icon {
+    display: none;
+    margin-left: auto;
+}
+
+.active .check-icon {
+    display: inline;
+}
+
+.btn.active {
+    background-color: #6f42c1;
+    color: #fff;
+}
+
+.dropdown-menu {
+    padding: 0;
+}
+
+.dropdown-menu button {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
