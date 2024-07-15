@@ -122,7 +122,7 @@
                     <form class="d-flex" role="search" action="{{ route('movie.search') }}" method="get">
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search"
                             name="search" required
-                            style="box-shadow: none; font-family: 'Ubuntu sans', sans-serif; font-size: 15px; border-radius: 4px;">
+                            style="box-shadow: none; font-family: 'Ubuntu sans', sans-serif; font-size: 15px; border-radius: 0px;">
                     </form>
                 </div>
             </div>
