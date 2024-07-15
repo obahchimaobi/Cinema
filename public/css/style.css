@@ -141,3 +141,11 @@ img {
     gap: 10px;
     transition: background-color 0.3s, color 0.3s;
 }
+
+.star {
+    font-size: 20px;
+    color: #FFD700; /* Gold color */
+}
+.empty-star {
+    color: #ddd; /* Light grey color */
+}

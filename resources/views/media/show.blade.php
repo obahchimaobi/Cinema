@@ -38,9 +38,27 @@
 
                                     <h6 style="font-size: 13px; font-family: 'Ubuntu sans', sans-serif; font-weight: normal;"
                                         class="mt-3 mt-xl-0">
-                                        <i class="fa fa-star" aria-hidden="true" style="font-size: 11px"></i>
+                                        {{-- <i class="fa fa-star" aria-hidden="true" style="font-size: 11px"></i> --}}
 
-                                        {{ isset($item->aggregateRating) ? $item->aggregateRating : 'N/A' }}
+                                        @php
+                                            $rating = $item->aggregateRating;
+                                            $fullStars = floor($rating);
+                                            $halfStar = $rating - $fullStars >= 0.5 ? 1 : 0;
+                                            $emptyStars = 5 - ($fullStars + $halfStar);
+                                        @endphp
+
+                                        {{-- {{ isset($item->aggregateRating) ? $item->aggregateRating : 'N/A' }} --}}
+                                        @for ($i = 0; $i < $fullStars; $i++)
+                                            <span class="star">&#9733;</span>
+                                        @endfor
+
+                                        @if ($halfStar)
+                                            <span class="star">&#9734;</span>
+                                        @endif
+
+                                        @for ($i = 0; $i < $emptyStars; $i++)
+                                            <span class="star empty-star">&#9733;</span>
+                                        @endfor
                                     </h6>
                                     <h6
                                         style="font-size: 13px; font-family: 'Ubuntu sans', sans-serif; font-weight: normal;">
@@ -127,7 +145,8 @@
                                                         <iframe src="{{ $item->trailer ? $item->trailer : 'N/A' }}"
                                                             title="YouTube video player" frameborder="0"
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                            allowfullscreen style="width: 100%; aspect-ratio: 4/2.3; border-radius: 5px;">
+                                                            allowfullscreen
+                                                            style="width: 100%; aspect-ratio: 4/2.3; border-radius: 5px;">
                                                         </iframe>
                                                     </div>
                                                 </div>
@@ -166,9 +185,29 @@
                                     </h4>
                                     <h6 style="font-size: 13px; font-family: 'Ubuntu sans', sans-serif; font-weight: normal;"
                                         class="mt-3 mt-xl-0">
-                                        <i class="fa fa-star" aria-hidden="true" style="font-size: 11px"></i>
+                                        {{-- <i class="fa fa-star" aria-hidden="true" style="font-size: 11px"></i>
 
-                                        {{ isset($item->aggregateRating) ? $item->aggregateRating : 'N/A' }}
+                                        {{ isset($item->aggregateRating) ? $item->aggregateRating : 'N/A' }} --}}
+
+                                        @php
+                                            $rating = $item->aggregateRating;
+                                            $fullStars = floor($rating);
+                                            $halfStar = $rating - $fullStars >= 0.5 ? 1 : 0;
+                                            $emptyStars = 5 - ($fullStars + $halfStar);
+                                        @endphp
+
+                                        {{-- {{ isset($item->aggregateRating) ? $item->aggregateRating : 'N/A' }} --}}
+                                        @for ($i = 0; $i < $fullStars; $i++)
+                                            <span class="star">&#9733;</span>
+                                        @endfor
+
+                                        @if ($halfStar)
+                                            <span class="star">&#9734;</span>
+                                        @endif
+
+                                        @for ($i = 0; $i < $emptyStars; $i++)
+                                            <span class="star empty-star">&#9733;</span>
+                                        @endfor
                                     </h6>
                                     <h6
                                         style="font-size: 13px; font-family: 'Ubuntu sans', sans-serif; font-weight: normal;">
@@ -245,9 +284,10 @@
                                             style="border-radius: 5px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding-right: 15px; padding-left: 15px; font-weight: bolder; font-size: 13px; padding-top: 12px; padding-bottom: 10px">{{ Str::upper('Watch Trailer') }}
                                         </button>
 
-                                        <a href="{{ $item->download_url }}" target="_blank" class="mt-2 btn btn-outline-primary btn-md"
-                                        style="border-radius: 5px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding-right: 15px; padding-left: 15px; font-weight: bolder; font-size: 13px; padding-top: 12px; padding-bottom: 10px; margin-left: 5px;">{{ Str::upper('Download') }}
-                                        <i class="fa fa-download" aria-hidden="true"></i></a>
+                                        <a href="{{ $item->download_url }}" target="_blank"
+                                            class="mt-2 btn btn-outline-primary btn-md"
+                                            style="border-radius: 5px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding-right: 15px; padding-left: 15px; font-weight: bolder; font-size: 13px; padding-top: 12px; padding-bottom: 10px; margin-left: 5px;">{{ Str::upper('Download') }}
+                                            <i class="fa fa-download" aria-hidden="true"></i></a>
 
                                         <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
                                             aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -259,7 +299,8 @@
                                                         <iframe src="{{ $item->trailer ? $item->trailer : 'N/A' }}"
                                                             title="YouTube video player" frameborder="0"
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                            allowfullscreen style="width: 100%; aspect-ratio: 4/2.3; border-radius: 5px;">
+                                                            allowfullscreen
+                                                            style="width: 100%; aspect-ratio: 4/2.3; border-radius: 5px;">
                                                         </iframe>
                                                     </div>
                                                 </div>
@@ -370,8 +411,7 @@
                     @if (isset($comments) && count($comments) > 0)
                         <div class="container-xl">
                             @foreach ($comments as $comment)
-                                <div class="row mt-2 pt-3 border"
-                                    style="border-radius: 5px;">
+                                <div class="row mt-2 pt-3 border" style="border-radius: 5px;">
                                     <div class="col-xl-6 col-lg-9 col-md-9 col-sm-9">
                                         <div class="row">
                                             <div class="col-xl-4 col-lg-4 col-md-4">
