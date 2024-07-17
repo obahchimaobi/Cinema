@@ -114,7 +114,7 @@
     {{-- Modal class is here --}}
     <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
         tabindex="-1">
-        <div class="modal-dialog modal-md border-0">
+        <div class="modal-dialog border-0">
             <div class="modal-content">
                 {{-- <div class="modal-header">
                 </div> --}}
@@ -122,7 +122,7 @@
                     <form class="d-flex" role="search" action="{{ route('movie.search') }}" method="get">
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search"
                             name="search" required
-                            style="box-shadow: none; font-family: 'Ubuntu sans', sans-serif; font-size: 15px; border-radius: 0px;">
+                            style="box-shadow: none; font-family: 'Ubuntu sans', sans-serif; font-size: 15px;">
                     </form>
                 </div>
             </div>
@@ -141,10 +141,10 @@
 
             <a class="navbar-brand text-reset" href="{{ url('/') }}" style="font-family: fantasy; font-weight: bold;"><img src="{{ url('icons/video.png') }}" style="height: 35px; width: 30px" alt=""> BETA<span class="text-info">MOVIES</span></a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            <button class="navbar-toggler text-reset border" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                style="border-radius: 0px; font-size: 15px; box-shadow: none;">
-                <span class="navbar-toggler-icon"></span>
+                style="border-radius: 0px; font-size: 17px; box-shadow: none;">
+                <i class="fa-solid fa-bars"></i>
             </button>
 
             <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasNavbar"
