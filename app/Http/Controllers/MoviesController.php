@@ -30,6 +30,8 @@ class MoviesController extends Controller
             // ->latest('s1.id')
             ->orderBy('created_at', 'asc')
             ->paginate(36);
+        
+        notify()->success('Laravel Notify is awesome!');
 
         return view('home', compact('series_all', 'movies_all', 'seasons'));
     }
