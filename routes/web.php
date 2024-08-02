@@ -41,7 +41,7 @@ Route::get('/{name}/season/{season}/episode/{episode}', [SeasonsController::clas
 
 // Route for commenting and replying on a movie or series
 Route::post('/{name}/{id}/comment', [CommentController::class, 'store'])->name('comment');
-Route::post('/{name}/reply', [ReplyController::class, 'reply'])->name('reply');
+Route::post('/{name}/{id}/reply', [ReplyController::class, 'reply'])->name('reply');
 
 // Admin Routes
 Route::middleware(['ipWhitelist'])->group(function () {

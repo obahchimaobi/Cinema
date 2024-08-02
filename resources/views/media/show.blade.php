@@ -403,7 +403,7 @@
                             });
                             Toast.fire({
                                 icon: "success",
-                                title: "Comment added successfully"
+                                title: "{{ session('success') }}"
                             });
                         </script>
                     @endif
@@ -441,7 +441,7 @@
 
                                     </div>
 
-                                    <div class="mt-2 text-center col-xl-10 m-auto">
+                                    <div class="mt-2 text-center col-xl-10 m-auto mb-2">
 
                                         @if (count($replies->where('comment_id', $comment->id)) > 0)
                                             <h6 class="text-center">- Replies -</h6>
@@ -452,7 +452,7 @@
                                                 <div class="row mt-2 border p-2" style="border-radius: 5px">
                                                     <div class="col-xl-5">
                                                         <h6>{{ $reply->reply_name }} <span
-                                                                style="font-family: 'Ubuntu sans', sans-serif; font-weight: normal; font-size: 13px">[{{ $reply->created_at }}]</span>
+                                                                style="font-family: 'Ubuntu sans', sans-serif; font-weight: normal; font-size: 13px">[{{ $reply->created_at->diffForHumans() }}]</span>
                                                         </h6>
                                                     </div>
 
@@ -466,24 +466,17 @@
 
                                     <div class="collapse mt-3 mb-3" id="{{ $comment->id }}">
                                         <div class="card card-body" style="border-radius: 5px">
-                                            <form action="{{ route('reply', ['name' => $item->originalTitleText]) }}"
+                                            <form action="{{ route('reply', ['name' => $item->originalTitleText, 'id' => $item->id]) }}"
                                                 method="post">
                                                 {{ csrf_field() }}
 
                                                 <input type="hidden" value="{{ $comment->id }}" name="comment_id">
-                                                <input type="hidden" value="{{ $item->originalTitleText }}"
-                                                    name="movie_name">
-                                                <input type="hidden" value="{{ $item->movieId }}" name="movie_id">
 
-                                                <label for="" style="font-size: 13px">Name: </label>
-                                                <input type="text" class="form-control" name="reply_name"
-                                                    style="border-radius: 0px" required>
+                                                <input type="text" class="form-control pt-2 pb-2 pl-3" name="reply_name"
+                                                    style="font-size: 13px; border-radius: 0px;" required placeholder="Name">
 
-                                                <label for="" class="mt-3" style="font-size: 13px">Your
-                                                    reply:
-                                                </label>
-                                                <textarea name="reply_text" id="" cols="30" rows="5" class="form-control"
-                                                    style="border-radius: 0px" required></textarea>
+                                                <textarea name="reply_text" id="" cols="30" rows="5" class="form-control mt-2"
+                                                    style="font-size: 13px; border-radius: 0px;" required placeholder="Your reply"></textarea>
 
                                                 <div class="mt-3">
                                                     <button class="btn btn-primary btn-sm"
