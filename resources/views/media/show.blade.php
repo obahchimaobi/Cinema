@@ -137,10 +137,13 @@
 
                                         <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
                                             aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-                                            <div class="modal-dialog modal-dialog-centered modal-lg border-0">
+                                            <div class="modal-dialog modal-dialog-centered modal-fullscreen border-0">
                                                 <div class="modal-content p-n3 custom-modal-content border-0"
                                                     style="border-radius: 0px; background: transparent;">
-                                                    {{-- <div class="modal-header"></div> --}}
+                                                    <div class="modal-header">
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    
                                                     <div class="modal-body">
                                                         <iframe src="{{ $item->trailer ? $item->trailer : 'N/A' }}"
                                                             title="YouTube video player" frameborder="0"
